@@ -12,14 +12,26 @@ $(document).ready(function(){
 
 	//INTERACTION
 	$(document).on('click','.floor-tile',function() {
-		let clickedFloorTile = $(this);
-		movePlayerPixel(clickedFloorTile);
-		revealFloorTile(clickedFloorTile);
+		let clickedFloorTile = $(this),
+			allFloorTilesAreCleared = !$('.floor-tile').is(":disabled"),
+			clickedOnStartingFloorTile = clickedFloorTile.hasClass('start-dungeon');
+
+		if (allFloorTilesAreCleared && clickedOnStartingFloorTile) {
+			destroyFloor();
+			setupFloor();
+		} else {
+			movePlayerPixel(clickedFloorTile);
+			revealFloorTile(clickedFloorTile);
+		}
 	})
 
 	//FUNCTIONS
 	function generateRandomFloatInRange(min, max) {
 		return (Math.random() * (max - min + 1)) + min;
+	}
+
+	function destroyFloor() {
+		$('the-map').find('the-floor').remove();
 	}
 
 	function setupFloor() {

@@ -12,6 +12,12 @@ button.floor-tile:focus {
 	border: 5px solid darkblue;
 }
 
+button.floor-tile:disabled:hover,
+button.floor-tile:disabled:focus {
+	cursor: default;
+	border: 3px solid darkgray;
+}
+
 button.floor-tile.start-dungeon {
 	background-color: darkseagreen;
 }
