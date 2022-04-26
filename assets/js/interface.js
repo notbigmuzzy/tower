@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	//TOGGLE GAME PANELS
-	$('the-switches a').click(function(e) {
+	$('the-switches .toggle-button').click(function(e) {
 		e.preventDefault()
 		let thisPanel = $(this).attr('data-toggle');
 
@@ -11,8 +11,5 @@ $(document).ready(function(){
 			$('body').removeClass().addClass(thisPanel);
 		}
 	});
-
-
-
 
 });

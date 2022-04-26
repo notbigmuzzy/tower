@@ -61,7 +61,7 @@ the-player {
 the-map {
 	position: relative;
 	display: flex;
-	background-color: darkgreen;
+	background-color: grey;
 	order: 2;
 }
 
@@ -73,9 +73,10 @@ the-floor {
 	width: 100%;
 }
 
-floor-tile {
-	height: 10%;
-	width: 10%;
+button.floor-tile {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 right-sidebar {
@@ -114,7 +115,7 @@ the-switches {
 	justify-content: center;
 }
 
-the-switches a {
+the-switches .toggle-button {
 	display: none;
 	background-color: #fff;
 	color: #000;
@@ -125,7 +126,7 @@ the-switches a {
 }
 
 @media only screen and (min-width: 900px) {
-	the-switches a.show-log {
+	the-switches .toggle-button.show-log {
 		position: fixed;
 		top: 50%;
 		right: -10px;
@@ -133,19 +134,19 @@ the-switches a {
 		transform: rotate(-90deg);
 	}
 
-	the-switches a.show-modifiers,
-	the-switches a.show-player {
+	the-switches .toggle-button.show-modifiers,
+	the-switches .toggle-button.show-player {
 		position: fixed;
 		top: 25%;
 		margin: 0;
 		transform: rotate(90deg);
 	}
 
-	the-switches a.show-modifiers {
+	the-switches .toggle-button.show-modifiers {
 		left: -20px;
 	}
 
-	the-switches a.show-player {
+	the-switches .toggle-button.show-player {
 		top: 75%;
 		left: 0px;
 	}
@@ -159,7 +160,7 @@ the-switches a {
 		right: 0;
 	}
 
-	the-switches a.show-log {
+	the-switches .toggle-button.show-log {
 		display: flex;
 	}
 
@@ -179,7 +180,7 @@ the-switches a {
 		z-index: -1;
 	}
 
-	body.show-log the-switches a.show-log {
+	body.show-log the-switches .toggle-button.show-log {
 		top: 0;
     	right: 250px;
     	transform: initial;
@@ -194,8 +195,8 @@ the-switches a {
 		left: 0;
 	}
 
-	the-switches a.show-modifiers,
-	the-switches a.show-player {
+	the-switches .toggle-button.show-modifiers,
+	the-switches .toggle-button.show-player {
 		display: flex;
 	}
 
@@ -217,15 +218,15 @@ the-switches a {
 		z-index: -1;
 	}
 
-	body.show-modifiers the-switches a.show-modifiers,
-	body.show-player the-switches a.show-player {
+	body.show-modifiers the-switches .toggle-button.show-modifiers,
+	body.show-player the-switches .toggle-button.show-player {
 		top: 0;
 		left: 250px;
 		transform: initial;
 	}
 
-	body.show-modifiers the-switches a.show-player,
-	body.show-player the-switches a.show-modifiers {
+	body.show-modifiers the-switches .toggle-button.show-player,
+	body.show-player the-switches .toggle-button.show-modifiers {
 		display: none;
 	}
 }
@@ -246,7 +247,7 @@ the-switches a {
 		min-height: 100vw;
 	}
 
-	the-switches a {
+	the-switches .toggle-button {
 		display: flex !important;
 	}
 }

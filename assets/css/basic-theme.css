@@ -1,3 +1,23 @@
-floor-tile {
-	border: 2px dashed darkkhaki;
+button.floor-tile {
+	border: 2px solid darkgray;
+}
+
+button.floor-tile:disabled {
+	background-color: grey;
+}
+
+button.floor-tile:hover,
+button.floor-tile:focus {
+	cursor: pointer;
+	border: 5px solid darkblue;
+}
+
+button.floor-tile.start-dungeon {
+	background-color: darkseagreen;
+}
+
+.has-player player-pixel {
+	width: 75%;
+	height: 75%;
+	background-color: red;
 }
